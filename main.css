@@ -251,6 +251,35 @@ body {
     background-image: url(c23e3f34d3f4598337fd.png);
     background-size: cover; }
 
+.chat-app {
+  width: 300px;
+  height: 124px; }
+  .chat-app_1 {
+    background-image: url(ba3ae967f686dec63b1f.png);
+    background-size: cover; }
+  .chat-app_2 {
+    background-image: url(061a48b7519e7f3aabe7.png);
+    background-size: cover; }
+  .chat-app_3 {
+    background-image: url(5ef77d011a93d44f166d.png);
+    background-size: cover; }
+  @media (min-width: 410px) {
+    .chat-app {
+      width: 400px;
+      height: 165px; } }
+  @media (min-width: 768px) {
+    .chat-app {
+      width: 760px;
+      height: 312px; } }
+  @media (min-width: 1024px) {
+    .chat-app {
+      width: 1020px;
+      height: 419px; } }
+  @media (min-width: 1280px) {
+    .chat-app {
+      width: 1280px;
+      height: 525px; } }
+
 .words-image {
   background-image: url(26e20dd2fa83ec47fc8d.png);
   background-size: cover;
