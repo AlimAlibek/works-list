@@ -7,7 +7,6 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/style/main.scss":
@@ -16,7 +15,18 @@
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://works-list/./src/style/main.scss?");
+
+/***/ }),
+
+/***/ "./src/scripts/app.js":
+/*!****************************!*\
+  !*** ./src/scripts/app.js ***!
+  \****************************/
+/***/ (() => {
+
+eval("\r\n\r\nif ('serviceWorker' in navigator) {\r\n    window.addEventListener('load', async () => {\r\n        try {\r\n            const reg = await navigator.serviceWorker.register('./sw.js');\r\n            console.log('SW: registered', reg);\r\n        } catch(e) {\r\n            console.log('SW: not registered', e);\r\n        }\r\n    })\r\n}\n\n//# sourceURL=webpack://works-list/./src/scripts/app.js?");
 
 /***/ }),
 
@@ -26,17 +36,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style/main.scss */ \"./src/style/main.scss\");\n/* harmony import */ var _scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scroll */ \"./src/scripts/scroll.js\");\n/* harmony import */ var _load_gifs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./load-gifs */ \"./src/scripts/load-gifs.js\");\n\r\n\r\n\r\n\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n  (0,_scroll__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n})\r\nwindow.addEventListener('load', () => {\r\n  ;(0,_load_gifs__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n})\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://works-list/./src/scripts/index.js?");
-
-/***/ }),
-
-/***/ "./src/scripts/load-gifs.js":
-/*!**********************************!*\
-  !*** ./src/scripts/load-gifs.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\n/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {\r\n\r\n   const gameImage = document.createElement('img');\r\n   gameImage.src = 'https://s10.gifyu.com/images/game-gif.gif';\r\n   document.querySelector('.game-image').appendChild(gameImage);\r\n\r\n   const wordsImage = document.createElement('img');\r\n   wordsImage.src = 'https://s10.gifyu.com/images/words-gif.gif';\r\n   document.querySelector('.words-image').appendChild(wordsImage); \r\n\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://works-list/./src/scripts/load-gifs.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style/main.scss */ \"./src/style/main.scss\");\n/* harmony import */ var _scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scroll */ \"./src/scripts/scroll.js\");\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app */ \"./src/scripts/app.js\");\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_app__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\n\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n  (0,_scroll__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n})\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://works-list/./src/scripts/index.js?");
 
 /***/ }),
 
@@ -46,6 +47,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\n\r\n// ----------------------------------------------------\r\n// main title animation\r\nconst mainTitle = document.querySelector(\".title_main-title\");\r\nconst mainSubTitle = document.querySelector(\".sub-title_main-sub-title\");\r\nconst moveTitles = (move) => {\r\n    if (move > window.innerHeight) return;\r\n\r\n    mainTitle.style.cssText = `transform: translate(0, ${move/1.2}px);`\r\n    mainSubTitle.style.cssText = `transform: translate(0, ${move/1.3}px);`\r\n}\r\n\r\n\r\n// -------------------------------------------------------\r\n// elements animation\r\n\r\nconst elInSigth = (elements, className) => {\r\n    const addClass = (el) => {\r\n        const rect = el.getBoundingClientRect();\r\n        if (rect.top < window.innerHeight * (0.7)) {\r\n            el.classList.add(`${className}`);\r\n        }\r\n    }\r\n\r\n    if (!elements.length) {\r\n        addClass(elements);\r\n    \r\n    } else {\r\n        elements.forEach(elem => {\r\n            addClass(elem);\r\n        })\r\n    }\r\n\r\n}\r\n\r\nconst titles = document.querySelectorAll(\".title_simple\");\r\nconst subTitles = document.querySelectorAll(\".sub-title_simple\");\r\nconst containerElements = document.querySelectorAll(\".container__element\");\r\nconst descriptions = document.querySelectorAll('.description');\r\n\r\n\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() =>{\r\n    window.addEventListener(\"scroll\", () => {\r\n        moveTitles(window.scrollY);\r\n        elInSigth(titles, \"title_simple_in-sight\");\r\n        elInSigth(subTitles, \"sub-title_simple_in-sight\");\r\n        elInSigth(containerElements, \"container__element_in-sight\");\r\n        elInSigth(descriptions, \"description_in-sight\");\r\n    })\r\n});        \r\n\r\n\n\n//# sourceURL=webpack://works-list/./src/scripts/scroll.js?");
 
 /***/ })
@@ -77,6 +79,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

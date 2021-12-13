@@ -1,0 +1,17 @@
+{
+  "icons": [
+    {
+      "src": "icon_144x144.f607a3f60ba8ad6027e85f75f341225f.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "name": "Works List",
+  "short_name": "",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "List of projects for portfolio",
+  "theme_color": "#5b5b00",
+  "background_color": "#0c4c00"
+}
