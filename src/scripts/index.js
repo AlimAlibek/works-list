@@ -1,9 +1,10 @@
 
-import scroll from "./scroll";
 import "../style/main.scss";
+import scroll from "./scroll";
+import './app';
 
-window.addEventListener('load', () => {
-  scroll();  
+window.addEventListener('DOMContentLoaded', () => {
+  scroll();
 })
 
 
